@@ -1,5 +1,9 @@
 # react-hooks-toolkit
 
+[![Development Workflow](https://github.com/knightburton/react-hooks-toolkit/actions/workflows/development.yml/badge.svg)](https://github.com/knightburton/react-hooks-toolkit/actions/workflows/development.yml)
+![npm](https://img.shields.io/npm/v/@knightburton/react-hooks-toolkit)
+![npm](https://img.shields.io/npm/dt/@knightburton/react-hooks-toolkit)
+
 The most commonly used custom react hooks in one place.
 
 Unlike the other packages like this, it only targets core custom hooks to keep everything on minimal.
