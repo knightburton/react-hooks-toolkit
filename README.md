@@ -1,10 +1,17 @@
 # react-hooks-toolkit
 
-Commonly used custom react hooks in one place.
+The most commonly used custom react hooks in one place.
+
+Unlike the other packages like this, it only targets core custom hooks to keep everything on minimal.
+These core custom hooks are the following:
+- [useDebounce](/src/useDebounce/README.md)
+- [useInterval](/src/useInterval/README.md)
+- [usePrevious](/src/usePrevious/README.md)
+- [useTimeout](/src/useTimeout/README.md)
 
 ### Getting started
 #### Compatibility
-Your project needs to use [React.js](https://reactjs.org/) 16.8 or later.
+Your project needs to use [React.js](https://reactjs.org/) 16.9 or later.
 
 #### Installation
 ```bash
@@ -18,32 +25,29 @@ yarn add @knightburton/react-hooks-toolkit
 ### Usage
 Here's an example of basic usage:
 ```jsx
-import React from 'react';
+import { useState } from 'react';
+import { usePrevious } from '@knightburton/react-hooks-toolkit';
 
 const App = () => {
+  const [text, setText] = useState('some text');
+  const previousText = usePrevious(text);
+
   return (
     <div>
-      // TODO: put example here
+      <p>Previous text is: <span>{previousText}</span></p>
+      <p>Current text is: <span>{text}</span></p>
     </div>
   );
 };
 
 export default App;
 ```
+For more example visit each hooks own documentation.
 
 ### Development
-Local development is broken into two parts (ideally using two terminal tabs).
-
-First, run rollup to watch your `src/` module and automatically recompile it into `dist/` whenever you make changes.
+Run rollup to watch your `src/` module and automatically recompile it into `dist/` whenever you make changes.
 ```bash
 # Assume that you are in the project main folder
-$ npm i
-$ npm start
-```
-The second part will be running the `example/` create-react-app that's linked to the local version of your module.
-```bash
-# Assume that you are in the project main folder
-$ cd example
 $ npm i
 $ npm start
 ```
