@@ -9,6 +9,7 @@ The most commonly used custom react hooks in one place.
 Unlike the other packages like this, it only targets core custom hooks to keep everything on minimal.
 These core custom hooks are the following:
 - [useDebounce](/src/useDebounce/README.md)
+- [useFetch](/src/useFetch/README.md)
 - [useInterval](/src/useInterval/README.md)
 - [usePrevious](/src/usePrevious/README.md)
 - [useTimeout](/src/useTimeout/README.md)
@@ -28,13 +29,13 @@ yarn add @knightburton/react-hooks-toolkit
 
 ### Usage
 Here's an example of basic usage:
-```jsx
+```tsx
 import { useState } from 'react';
 import { usePrevious } from '@knightburton/react-hooks-toolkit';
 
-const App = () => {
-  const [text, setText] = useState('some text');
-  const previousText = usePrevious(text);
+const App = (): JSX.Element => {
+  const [text, setText] = useState<string>('some text');
+  const previousText = usePrevious<string>(text);
 
   return (
     <div>
