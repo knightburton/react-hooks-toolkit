@@ -2,6 +2,15 @@
 
 This allows you to achive almost the same behavior like the old class component lifecycle method `componentDidUpdate` give you. Store a value previous state and use it for anything that you want.
 
+### Args and return value
+
+```tsx
+const usePrevious = <T>(value: T): MutableRefObject<T | undefined>['current'] => {
+  // ....
+};
+```
+Where `MutableRefObject` comes form `React`.
+
 ### Usage
 
 ```tsx

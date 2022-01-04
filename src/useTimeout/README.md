@@ -2,6 +2,14 @@
 
 This allows you to use the well known [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) method inside a React Functional Component. Very similar to the `useInterval` hook. When the `delay` reached, the callback is executed. Could be great to hide or display something with delay.
 
+### Args and return value
+
+```tsx
+const useTimeout = (callback: () => void, delay: number | null): void => {
+  // ....
+};
+```
+
 ### Usage
 
 ```tsx

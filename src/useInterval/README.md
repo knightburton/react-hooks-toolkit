@@ -2,6 +2,14 @@
 
 This allows you to use the well known [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method inside a React Functional Component. When the `delay` reached, the callback is executed, and again, and again... This could be great to polling for example.
 
+### Args and return value
+
+```tsx
+const useInterval = (callback: () => void, delay: number | null): void => {
+  // ....
+};
+```
+
 ### Usage
 
 ```tsx
