@@ -49,7 +49,7 @@ const useFetch = <T extends unknown>(url?: string, options?: RequestInit): State
     if (!url) return undefined;
 
     const execute = async () => {
-      if (!cancel.current) dispatch({ type: ActionTypes.Loading, payload: true });
+      dispatch({ type: ActionTypes.Loading, payload: true });
       try {
         const response = await fetch(url, options);
         if (!response.ok) throw new Error(response.statusText);
