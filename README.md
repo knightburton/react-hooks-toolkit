@@ -30,32 +30,29 @@ yarn add @knightburton/react-hooks-toolkit
 ### Usage
 Here's an example of basic usage:
 ```tsx
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { usePrevious } from '@knightburton/react-hooks-toolkit';
 
-const App = (): JSX.Element => {
-  const [text, setText] = useState<string>('some text');
-  const previousText = usePrevious<string>(text);
+const App = () => {
+  const [value, setValue] = useState<number>(0);
+  const previouseValue = usePrevious<number>(value);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    setValue(Math.floor(Math.random() * 101));
+  };
 
   return (
-    <div>
-      <p>Previous text is: <span>{previousText}</span></p>
-      <p>Current text is: <span>{text}</span></p>
-    </div>
+    <>
+      <p>The previous random number <strong>{previouseValue || 0}</strong></p>
+      <p>The current random number <strong>{value}</strong></p>
+      <input type="button" value="Random" onClick={handleClick} />;
+    </>
   );
 };
 
 export default App;
 ```
-For more example visit each hooks own documentation.
-
-### Development
-Run rollup to watch your `src/` module and automatically recompile it into `dist/` whenever you make changes.
-```bash
-# Assume that you are in the project main folder
-$ npm i
-$ npm start
-```
+For more example/usage visit each hooks own documentation.
 
 ### Contributing
 First off all, thanks for taking the time to contribute! :muscle:
