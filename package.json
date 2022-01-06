@@ -68,6 +68,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^4.6.0",
     "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-test-renderer": "^17.0.2",
@@ -81,9 +82,14 @@
   },
   "jest": {
     "verbose": false,
+    "globals": {
+      "__DEV__": true
+    },
+    "automock": false,
     "coverageReporters": [
       "text"
     ],
+    "testEnvironment": "node",
     "transform": {
       "\\.(ts|tsx)$": "ts-jest"
     },
@@ -93,13 +99,18 @@
       "tsx",
       "js"
     ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.ts"
+    ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
+      "<rootDir>/dist/",
+      "<rootDir>/test/setupTests.ts"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
+      "<rootDir>/dist/",
+      "<rootDir>/test/setupTests.ts"
     ]
   }
 }
