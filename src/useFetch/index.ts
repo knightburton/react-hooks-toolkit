@@ -25,8 +25,8 @@ type ActionMap<M extends { [key: string]: any }> = {
 type Actions<T> = ActionMap<Payload<T>>[keyof ActionMap<Payload<T>>];
 
 const reducer = <T>(state: State<T>, action: Actions<T>): State<T> => {
-  if (action.type === ActionTypes.Success) return { ...state, data: action.payload, loading: false };
-  if (action.type === ActionTypes.Failure) return { ...state, error: action.payload, loading: false };
+  if (action.type === ActionTypes.Success) return { ...state, data: action.payload, loading: false, error: undefined };
+  if (action.type === ActionTypes.Failure) return { ...state, error: action.payload, loading: false, data: undefined };
   return { ...state, loading: action.payload };
 };
 
