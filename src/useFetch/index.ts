@@ -25,16 +25,9 @@ type ActionMap<M extends { [key: string]: any }> = {
 type Actions<T> = ActionMap<Payload<T>>[keyof ActionMap<Payload<T>>];
 
 const reducer = <T>(state: State<T>, action: Actions<T>): State<T> => {
-  switch (action.type) {
-    case ActionTypes.Loading:
-      return { ...state, loading: action.payload };
-    case ActionTypes.Success:
-      return { ...state, data: action.payload, loading: false };
-    case ActionTypes.Failure:
-      return { ...state, error: action.payload, loading: false };
-    default:
-      return state;
-  }
+  if (action.type === ActionTypes.Success) return { ...state, data: action.payload, loading: false };
+  if (action.type === ActionTypes.Failure) return { ...state, error: action.payload, loading: false };
+  return { ...state, loading: action.payload };
 };
 
 const useFetch = <T extends unknown>(url?: string, options?: RequestInit): State<T> => {
@@ -54,7 +47,8 @@ const useFetch = <T extends unknown>(url?: string, options?: RequestInit): State
         const response = await fetch(url, options);
         if (!response.ok) throw new Error(response.statusText);
         if (![204, 205].includes(response.status)) {
-          const data = (await (/^application\/json/.test(response.headers.get('content-type') || '') ? response.json() : response.text())) as T;
+          const contentType: string | null = response.headers.get('content-type');
+          const data = (await (contentType && /^application\/json/.test(contentType) ? response.json() : response.text())) as T;
           if (!cancel.current) dispatch({ type: ActionTypes.Success, payload: data });
         } else if (!cancel.current) {
           dispatch({ type: ActionTypes.Loading, payload: false });
