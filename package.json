@@ -1,7 +1,7 @@
 {
   "name": "@knightburton/react-hooks-toolkit",
   "version": "1.0.0",
-  "description": "React hook to handle form change and validation.",
+  "description": "The most commonly used custom react hooks in one place.",
   "homepage": "https://github.com/knightburton/react-hooks-toolkit#readme",
   "repository": {
     "type": "git",
@@ -16,7 +16,13 @@
   "keywords": [
     "react",
     "react-hooks",
-    "typescript"
+    "hooks",
+    "typescript",
+    "useDebounce",
+    "useFetch",
+    "useInterval",
+    "usePrevious",
+    "useTimeout"
   ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
