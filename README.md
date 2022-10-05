@@ -9,6 +9,7 @@ The most commonly used custom react hooks in one place.
 Unlike the other packages like this, it only targets core custom hooks to keep everything on minimal.
 These core custom hooks are the following:
 - [useDebounce](/src/useDebounce/README.md)
+- [useDebounceFunction](/src/useDebounceFunction/README.md)
 - [useFetch](/src/useFetch/README.md)
 - [useInterval](/src/useInterval/README.md)
 - [usePrevious](/src/usePrevious/README.md)
