@@ -4,7 +4,7 @@ const clear = (timeoutId: NodeJS.Timeout | null) => {
   if (timeoutId) clearTimeout(timeoutId);
 };
 
-const useDebounceFunction = (callback: () => void, delay = 500): (() => void) => {
+const useDebounceFunction = <T extends (...args: Parameters<T>) => void>(callback: T, delay = 500): ((...args: Parameters<T>) => void) => {
   const timeout = useRef<NodeJS.Timeout | null>(null);
   const savedCallback = useRef(callback);
 
