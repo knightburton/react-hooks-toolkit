@@ -26,7 +26,7 @@ describe('useTimeout', () => {
     expect(clearTimeout).not.toHaveBeenCalled();
   });
 
-  test('should call the callback after delay and clear the interval after unmouunt', () => {
+  test('should call the callback after delay and clear the interval after unmount', () => {
     const { unmount } = renderHook(() => useTimeout(callback, 200));
 
     expect(callback).not.toHaveBeenCalled();

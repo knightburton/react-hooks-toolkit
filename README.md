@@ -36,7 +36,7 @@ import { usePrevious } from '@knightburton/react-hooks-toolkit';
 
 const App = () => {
   const [value, setValue] = useState<number>(0);
-  const previouseValue = usePrevious<number>(value);
+  const previousValue = usePrevious<number>(value);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setValue(Math.floor(Math.random() * 101));
@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <p>The previous random number <strong>{previouseValue || 0}</strong></p>
+      <p>The previous random number <strong>{previousValue || 0}</strong></p>
       <p>The current random number <strong>{value}</strong></p>
       <input type="button" value="Random" onClick={handleClick} />;
     </>

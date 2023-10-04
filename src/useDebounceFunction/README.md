@@ -1,6 +1,6 @@
 ## useDebounceFunction
 
-This allows you to debounce a function based on the given delay. The given `callback` will be executed after the timer hits the given `delay` . This can be usefule when you need to call a specific function as an event handler and you wants to prevent continous calls.
+This allows you to debounce a function based on the given delay. The given `callback` will be executed after the timer hits the given `delay` . This can be useful when you need to call a specific function as an event handler and you wants to prevent continuous calls.
 
 ### Args and return value
 

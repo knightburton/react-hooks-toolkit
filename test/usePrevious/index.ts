@@ -11,7 +11,7 @@ describe('usePrevious', () => {
     unmount();
   });
 
-  test('should return previous veluas after each rerender', () => {
+  test('should return previous values after each rerender', () => {
     const { result, rerender, unmount } = renderHook(({ value }) => usePrevious<string>(value), { initialProps: { value: 'firstValue' } });
 
     expect(result.current).toEqual(undefined);
