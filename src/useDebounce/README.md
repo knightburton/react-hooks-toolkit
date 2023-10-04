@@ -1,6 +1,6 @@
 ## useDebounce
 
-This allows you to debounce a fast chaning value with the help of an internal timer. The given `value` will be returned after the timer hits the given `delay` (if there is no new change on value). This can be usefule when you need to hit an API endpoint with a fast changing value (a live search for example).
+This allows you to debounce a fast changing value with the help of an internal timer. The given `value` will be returned after the timer hits the given `delay` (if there is no new change on value). This can be useful when you need to hit an API endpoint with a fast changing value (a live search for example).
 
 ### Args and return value
 

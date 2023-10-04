@@ -24,7 +24,7 @@ const App = () => {
   return (
     <p>
       The following message is important, you must remember to it!
-      <strong>{visible ? 'The naswer is 42.' : 'I hope you catched it ;)'}</strong>
+      <strong>{visible ? 'The answer is 42.' : 'I hope you have got it ;)'}</strong>
     </p>
   );
 };
